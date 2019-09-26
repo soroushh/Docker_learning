@@ -8,7 +8,7 @@ cache = redis.Redis(host='redis', port=6379)
 
 
 def set_key_value(key, value):
-    cache.set(key, value)
+    cache.setex(key, 5, value)
 
 
 def get_value(key):
